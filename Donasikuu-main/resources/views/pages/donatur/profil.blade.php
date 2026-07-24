@@ -229,16 +229,19 @@
                                     </span>
                                 </div>
 
-                                <textarea class="form-control @error('alamat') is-invalid @enderror"
+                                <textarea
+                                    class="form-control @error('alamat') is-invalid @enderror"
                                     id="alamat"
                                     name="alamat"
                                     rows="3"
-                                    placeholder="Masukkan alamat lengkap">{{ old('alamat', Auth::user()->alamat) }}</textarea>
+                                    minlength="15"
+                                    placeholder="Masukkan alamat lengkap">{{ old('alamat', Auth::user()->alamat) }}
+                                </textarea>
                             </div>
 
                             <!-- helper text rapi & aman -->
                             <span style="font-size: 12px; color: #858796; display: block; margin-top: 4px;">
-                                Contoh: Gg. Gama RT 02/03 Pinang, Kota Tangerang.
+                                Minimal 15 karakter. Contoh: Gg. Gama RT 02/03 Pinang, Kota Tangerang.
                             </span>
 
                             @error('alamat')

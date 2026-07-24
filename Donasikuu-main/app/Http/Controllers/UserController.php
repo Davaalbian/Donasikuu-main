@@ -38,7 +38,7 @@ class UserController extends Controller
             'name'   => 'required|string|max:255',
             'email'  => 'required|email|max:255|unique:users,email,' . $id,
             'no_telp'=> 'nullable|string|max:20',
-            'alamat' => 'nullable|string',
+            'alamat' => 'nullable|string|min:15|max:255',
         ]);
 
         $user = User::findOrFail($id);
@@ -79,7 +79,7 @@ class UserController extends Controller
             'email'          => 'required|email|max:255|unique:users,email,' . Auth::id(),
             'no_telp'        => 'nullable|string|max:20',
             'jenis_kelamin'  => 'nullable|in:L,P',
-            'alamat'         => 'nullable|string',
+            'alamat'         => 'nullable|string|min:15|max:255',
             'rt'             => 'nullable|string|max:5',
         ]);
 
